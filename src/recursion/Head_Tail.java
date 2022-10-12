@@ -10,6 +10,7 @@ public class Head_Tail {
             System.out.println(ss);
             return;
         }
+        if(ss.length()==0||ss.charAt(ss.length()-1)!='H')
         fun(s,ss+s.charAt(0),n-1);
         fun(s,ss+s.charAt(1),n-1);
     }
