@@ -1,3 +1,5 @@
+package mix;
+
 import java.util.Scanner;
 
 public class Conversion {

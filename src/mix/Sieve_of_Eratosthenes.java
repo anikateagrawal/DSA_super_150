@@ -1,3 +1,5 @@
+package mix;
+
 public class Sieve_of_Eratosthenes {
     public static void main(String[] args) {
         int n=100;

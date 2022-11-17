@@ -1,3 +1,5 @@
+package mix;
+
 public class Palindromic_Substring {
     public static void main(String[] args) {
         String s="nitin";

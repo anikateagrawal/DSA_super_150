@@ -1,3 +1,5 @@
+package mix;
+
 public class Square_root {
     public static void main(String[] args) {
         int n=47;
