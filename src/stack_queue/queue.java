@@ -1,16 +1,16 @@
 package stack_queue;
 
-public class Queue {
-    private int[] arr;
-    private int front = 0;
-    private int size = 0;
+public class queue {
+    protected int[] arr;
+    protected int front = 0;
+    protected int size = 0;
 
-    public Queue() {
+    public queue() {
         // TODO Auto-generated constructor stub
         arr = new int[5];
     }
 
-    public Queue(int n) {
+    public queue(int n) {
         // TODO Auto-generated constructor stub
         arr = new int[n];
     }
@@ -25,7 +25,7 @@ public class Queue {
 
     public void Enqueue(int item) throws Exception {
         if (isfull()) {
-            throw new Exception("Bklol Queue full h");
+            throw new Exception("Bklol queue full h");
         }
         int idx = (front + size) % arr.length;
         arr[idx] = item;
@@ -34,7 +34,7 @@ public class Queue {
 
     public int dequeue() throws Exception {
         if (isEmpty()) {
-            throw new Exception("Queue khali hai");
+            throw new Exception("queue khali hai");
         }
         int rv = arr[front];
         front = (front + 1) % arr.length;

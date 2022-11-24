@@ -1,12 +1,10 @@
 package stack_queue;
 
-import stack_queue.Stack;
-
 public class Stack_Client {
 
     public static void main(String[] args) throws Exception {
         // TODO Auto-generated method stub
-        Stack s = new Stack();
+        stack s = new stack();
         s.push(10);
         s.push(20);
         s.push(30);

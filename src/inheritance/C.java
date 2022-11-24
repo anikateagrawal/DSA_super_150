@@ -1,6 +1,6 @@
 package inheritance;
 
-public class C {
+public class C extends P{
     int d=2,d2=20;
     public void fun(){
         System.out.println("Fun in C");

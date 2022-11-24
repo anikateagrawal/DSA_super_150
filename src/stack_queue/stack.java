@@ -1,16 +1,16 @@
 package stack_queue;
 
-public class Stack {
-        private int[] arr;
+public class stack {
+        protected int[] arr;
         private int top;
 
-        public Stack() {
+        public stack() {
             // TODO Auto-generated constructor stub
             arr = new int[5];
             top = -1;
         }
 
-        public Stack(int n) {
+        public stack(int n) {
             // TODO Auto-generated constructor stub
             arr = new int[n];
             top = -1;
@@ -30,7 +30,7 @@ public class Stack {
 
         public void push(int item) throws Exception {
             if(isfull()) {
-                throw new Exception("BkLol Stack full hai");
+                throw new Exception("BkLol stack full hai");
             }
             top++;
             arr[top] = item;
@@ -40,7 +40,7 @@ public class Stack {
 
         public int pop() throws Exception {
             if(isEmpty()) {
-                throw new Exception("BkLol Stack khali hai");
+                throw new Exception("BkLol stack khali hai");
             }
             int rv = arr[top];
             top--;
@@ -49,7 +49,7 @@ public class Stack {
 
         public int peek() throws Exception {
             if(isEmpty()) {
-                throw new Exception("BkLol Stack khali hai");
+                throw new Exception("stack empty");
             }
             int rv = arr[top];
 
