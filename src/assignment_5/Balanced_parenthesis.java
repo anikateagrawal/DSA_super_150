@@ -43,6 +43,7 @@ public class Balanced_parenthesis {
             if(ch=='('||ch=='{'||ch=='['){
                 stack.push(ch);
             }
+            else if(stack.isEmpty())return false;
             else if(ch==')'&&stack.top()=='(')stack.pop();
             else if(ch=='}'&& stack.top()=='{')stack.pop();
             else if(ch==']'&& stack.top()=='[')stack.pop();
