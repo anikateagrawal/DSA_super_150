@@ -1,6 +1,6 @@
 package tree;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Binary_Tree {
     private class Node{
@@ -106,5 +106,27 @@ public class Binary_Tree {
         if(t1==null||t2==null)return false;
         if(t1.val!=t2.val)return false;
         return hlp(t1.left,t2.right)&& hlp(t1.right,t2.left);
+    }
+
+    public List<List<Integer>> level_order(){
+        List<List<Integer>> l=new ArrayList<>();
+        if(root==null)return l;
+        Queue<Node> q=new LinkedList<>();
+        q.add(root);
+        Queue<Node> q2=new LinkedList<>();
+        List<Integer> ll=new ArrayList<>();
+        while(!q.isEmpty()){
+            Node n=q.poll();
+            ll.add(n.val);
+            if(n.left!=null)q2.add(n.left);
+            if(n.right!=null)q2.add(n.right);
+            if(q.isEmpty()){
+                l.add(ll);
+                ll=new ArrayList<>();
+                q=q2;
+                q2=new LinkedList<>();
+            }
+        }
+        return l;
     }
 }

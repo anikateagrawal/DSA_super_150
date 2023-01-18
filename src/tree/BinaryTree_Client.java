@@ -13,5 +13,6 @@ public class BinaryTree_Client {
         System.out.println(bt.search(-50));
         System.out.println(bt.maximum());
         System.out.println(bt.height());
+        System.out.println(bt.level_order());
     }
 }
