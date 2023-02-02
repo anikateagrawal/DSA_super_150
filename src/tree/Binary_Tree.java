@@ -129,4 +129,20 @@ public class Binary_Tree {
         }
         return l;
     }
+    class pair{
+        int ht=-1;
+        int d=0;
+    }
+    public int diameter(){
+        return diameter(root).d;
+    }
+    public pair diameter(Node root){
+        pair p=new pair();
+        if(root==null)return p;
+        pair left=diameter(root.left);
+        pair right=diameter(root.right);
+        p.ht=Math.max(left.ht,right.ht)+1;
+        p.d=Math.max(left.d,Math.max(right.d,left.ht+right.ht+2));
+        return p;
+    }
 }
