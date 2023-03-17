@@ -14,10 +14,11 @@ public class GraphClient {
         g.addEdge(7,5,2);
         g.addEdge(6,7,3);
         g.display();
-        g.removeVertex(4);
-        System.out.println();
-        g.display();
         System.out.println();
         System.out.println(g.hasPath(1,3,new HashSet<>()));
+        g.printPaths(1,6,new HashSet<>(),"");
+
+        System.out.println(g.bfs(1,6));
+        System.out.println(g.dfs(1,6));
     }
 }

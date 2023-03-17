@@ -53,4 +53,100 @@ public class Graph {
         }
         return false;
     }
+    public void printPaths(int src,int des,Set<Integer> vis,String path){
+        if(src==des){
+            System.out.println(path+des);
+            return;
+        }
+        vis.add(src);
+        for(int i:map.get(src).keySet()){
+            if(!vis.contains(i))
+            printPaths(i,des,vis,path+src+" ");
+        }
+        vis.remove(src);
+    }
+    public boolean bfs(int src,int des){
+        Set<Integer> visited=new HashSet<>();
+        Queue<Integer> q=new LinkedList<>();
+        q.add(src);
+        while (!q.isEmpty()){
+            //remove
+            int f=q.poll();
+            //if already visited ignore
+            if(visited.contains(f))continue;
+            //visited
+            visited.add(f);
+            //self work
+            if(f==des)return true;
+            //add neighbours
+            for(int n:map.get(f).keySet()){
+                if(!visited.contains(n))q.add(n);
+            }
+        }
+        return false;
+    }
+    public boolean dfs(int src,int des){
+        Set<Integer> visited=new HashSet<>();
+        Stack<Integer> q=new Stack<>();
+        q.push(src);
+        while (!q.isEmpty()){
+            //remove
+            int f=q.pop();
+            //if already visited ignore
+            if(visited.contains(f))continue;
+            //visited
+            visited.add(f);
+            //self work
+            if(f==des)return true;
+            //add neighbours
+            for(int n:map.get(f).keySet()){
+                if(!visited.contains(n))q.push(n);
+            }
+        }
+        return false;
+    }
+    public void bft(){
+        Set<Integer> visited=new HashSet<>();
+        Queue<Integer> q=new LinkedList<>();
+        for(int src:map.keySet()){
+            if(visited.contains(src))continue;
+            q.add(src);
+            while (!q.isEmpty()){
+                //remove
+                int f=q.poll();
+                //if already visited ignore
+                if(visited.contains(f))continue;
+                //visited
+                visited.add(f);
+                //self work
+                System.out.println(f+" ");
+                //add neighbours
+                for(int n:map.get(f).keySet()){
+                    if(!visited.contains(n))q.add(n);
+                }
+            }
+        }
+    }
+    public void dft(){
+        Set<Integer> visited=new HashSet<>();
+        Stack<Integer> q=new Stack<>();
+        for(int src:map.keySet()){
+            if(visited.contains(src))continue;
+            q.push(src);
+            while (!q.isEmpty()){
+                //remove
+                int f=q.pop();
+                //if already visited ignore
+                if(visited.contains(f))continue;
+                //visited
+                visited.add(f);
+                //self work
+                System.out.println(f+" ");
+                //add neighbours
+                for(int n:map.get(f).keySet()){
+                    if(!visited.contains(n))q.push(n);
+                }
+            }
+        }
+    }
 }
