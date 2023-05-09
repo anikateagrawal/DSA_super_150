@@ -62,7 +62,7 @@ public class BellmanFord {
             }
         }
         for (int i = 1; i < ds.length; i++) {
-            System.out.println(ds[i]+" ");
+            System.out.println("Vertex " +i+" distance "+ds[i]);
         }
     }
 

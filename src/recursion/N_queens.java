@@ -25,7 +25,9 @@ public class N_queens {
     static  void display(boolean [][]b){
         for (int i = 0; i < b.length; i++) {
             for (int j = 0; j <b[0].length ; j++) {
-                System.out.print(b[i][j]+" ");
+                if(b[i][j])
+                System.out.print("Q\t");
+                else System.out.print(".\t");
             }
             System.out.println();
         }

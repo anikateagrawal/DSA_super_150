@@ -38,7 +38,7 @@ public static void Partitioning(String ques,String ans,List<List<String>> l,List
         String s=ques.substring(0,cut);
         if(isPalin(s)){
             ll.add(s);
-            Partitioning(ques.substring(cut),ans+s+" ",l,ll);
+            Partitioning(ques.substring(cut),ans+s+"|",l,ll);
             ll.remove(ll.size()-1);
         }
 
